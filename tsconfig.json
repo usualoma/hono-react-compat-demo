@@ -21,6 +21,12 @@
 
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx/dom",
+
+    "types": ["hono"],
+    "paths": {
+      "react": ["./node_modules/hono/dist/jsx/dom"],
+      "react-dom": ["./node_modules/hono/dist/jsx/dom"],
+    },
   },
   "include": ["src"]
 }
