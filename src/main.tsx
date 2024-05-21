@@ -1,8 +1,17 @@
 import { render } from "hono/jsx/dom";
-import { SpinnerCircular } from 'spinners-react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './styles.css';
+// import { render } from "react-dom"
+import { SpinnerCircular } from "spinners-react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./styles.css";
+import { Toaster } from "@/components/ui/toaster";
+import { ToastDemo } from "./toast";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 import * as Popover from "@radix-ui/react-popover";
 
@@ -26,12 +35,24 @@ function App() {
   return (
     <div>
       <h3>Spinner</h3>
-      <SpinnerCircular/>
+      <SpinnerCircular />
       <h3>Toast</h3>
       <button onClick={notify}>Notify!</button>
       <ToastContainer />
       <h3>Primitive</h3>
-      <PopoverDemo/>
+      <PopoverDemo />
+      <h3>Toast 2</h3>
+      <ToastDemo />
+      <Toaster />
+      <h3>Tooltip</h3>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>Hover</TooltipTrigger>
+          <TooltipContent>
+            <p>Add to library</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </div>
   );
 }
