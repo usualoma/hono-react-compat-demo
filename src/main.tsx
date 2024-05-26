@@ -1,5 +1,5 @@
-import { render } from "hono/jsx/dom";
-// import { render } from "react-dom"
+import { createRoot } from "hono/jsx/dom/client";
+// import { render } from "react-dom/client"
 import { SpinnerCircular } from "spinners-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -57,4 +57,5 @@ function App() {
   );
 }
 
-render(<App />, document.getElementById("app")!);
+const root = createRoot(document.getElementById("app")!);
+root.render(<App />);
